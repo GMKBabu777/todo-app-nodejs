@@ -8,15 +8,15 @@ phases:
     commands:
       - cd src
       # Run a security audit across the dependencies
-      - npm audit
+#       - npm audit
       # Install the dependencies
       - npm install
   build:
     commands:
       # Run tests
-      - npm test
+#       - npm test
       # Remove all dependencies not relevant for production
-      - npm prune --production
+#       - npm prune --production
       - cd ..
   post_build:
     commands:
