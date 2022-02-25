@@ -2,6 +2,9 @@ openapi: "3.0.1"
 info:
   title: "tasks-api"
   version: "v1.0"
+basePath: "/qa"
+schemes:
+- "https"
 paths:
   /:
     get:
