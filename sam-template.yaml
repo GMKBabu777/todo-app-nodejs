@@ -14,9 +14,9 @@ Globals:
     OpenApiVersion: '3.0.1'
 
 Parameters:
-  S3BucketName:
-    Type: String
-    Description: The name of the S3 bucket in which the Swagger specification can be found.
+#   S3BucketName:
+#     Type: String
+#     Description: The name of the S3 bucket in which the Swagger specification can be found.
   StageName:
     Type: String
     Default: dev
@@ -35,12 +35,7 @@ Resources:
           Fn::Transform:
             Name: AWS::Include
             Parameters:
-              Location:
-                Fn::Join:
-                  - ''
-                  - - 's3://'
-                    - Ref: S3BucketName
-                    - '/swagger.yaml'
+              Location: ./swagger.yaml
 
   ListTasksFunction:
     Type: AWS::Serverless::Function
